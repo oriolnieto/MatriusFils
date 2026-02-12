@@ -32,13 +32,15 @@ public class MainMatriu {
         int[][] Matriu1 = new int[filesMatriu1][columnesMatriu1];
         int[][] Matriu2 = new int[filesMatriu2][columnesMatriu2];
 
+        for (int j = 0; j < columnesMatriu1; j++) {
         for (int i = 0; i < filesMatriu1; i++){
-
-
+            System.out.println("Introdueix per a la Matriu 1 - Fila " + i + " Columna " + j + ":");
+            Matriu1[j][i] = scan.nextInt();
         }
 
 
 
+        }
 
         //  for (int i = 0; i < fil; i++) {
         //  try {
