@@ -1,5 +1,8 @@
 package matrius1;
 
+// falta fer demanar opció, la que he fet ja que es demanant per consola i la que falta mitjançant arxiu, mirar mauri i irene practiques passades <3
+
+
 import java.util.Scanner;
 import matrius1.FilMatriu;
 
@@ -33,14 +36,19 @@ public class MainMatriu {
         int[][] Matriu2 = new int[filesMatriu2][columnesMatriu2];
 
         for (int j = 0; j < columnesMatriu1; j++) {
-        for (int i = 0; i < filesMatriu1; i++){
-            System.out.println("Introdueix per a la Matriu 1 - Fila " + i + " Columna " + j + ":");
-            Matriu1[j][i] = scan.nextInt();
+            for (int i = 0; i < filesMatriu1; i++){
+                System.out.println("Introdueix per a la Matriu 1 - Fila " + i + " Columna " + j + ":");
+                Matriu1[i][j] = scan.nextInt();
+        }
+
+        for (int z = 0; z < columnesMatriu2; z++) {
+            for (int i = 0; i < filesMatriu2; i++){
+                System.out.println("Introdueix per a la Matriu 2 - Fila " + i + " Columna " + j + ":");
+                Matriu2[i][z] = scan.nextInt();
+                }
         }
 
 
-
-        }
 
         //  for (int i = 0; i < fil; i++) {
         //  try {
@@ -51,3 +59,4 @@ public class MainMatriu {
         //   }
         }
     }
+}
