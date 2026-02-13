@@ -7,7 +7,7 @@ import java.util.Scanner;
 import matrius1.FilMatriu;
 
 public class MainMatriu {
-    public static void main() {
+    public static void main (String[] args) {
 
         Scanner scan = new Scanner(System.in);
 
@@ -34,21 +34,28 @@ public class MainMatriu {
 
         int[][] Matriu1 = new int[filesMatriu1][columnesMatriu1];
         int[][] Matriu2 = new int[filesMatriu2][columnesMatriu2];
+        int[][] Resultat = new int[filesMatriu1][columnesMatriu2];
 
-        for (int j = 0; j < columnesMatriu1; j++) {
-            for (int i = 0; i < filesMatriu1; i++){
+        for (int j = 0; j < filesMatriu1; j++) {
+            for (int i = 0; i < columnesMatriu1; i++){
                 System.out.println("Introdueix per a la Matriu 1 - Fila " + i + " Columna " + j + ":");
-                Matriu1[i][j] = scan.nextInt();
+                Matriu1[j][i] = scan.nextInt();
         }
 
-        for (int z = 0; z < columnesMatriu2; z++) {
-            for (int i = 0; i < filesMatriu2; i++){
+        for (int z = 0; z < filesMatriu2; z++) {
+            for (int i = 0; i < columnesMatriu2; i++){
                 System.out.println("Introdueix per a la Matriu 2 - Fila " + i + " Columna " + j + ":");
-                Matriu2[i][z] = scan.nextInt();
+                Matriu2[z][i] = scan.nextInt();
                 }
         }
 
+            FilMatriu[][] fils = new FilMatriu[filesMatriu1][columnesMatriu2];
 
+            for (int z = 0; z < filesMatriu1; z++) {
+                for (int i = 0; i < columnesMatriu2; i++){
+                    fils[i][z] = new FilMatriu(Matriu1,Matriu2,i,z,Resultat);
+                    fils[i][z].start();
+                }
 
         //  for (int i = 0; i < fil; i++) {
         //  try {
@@ -59,4 +66,5 @@ public class MainMatriu {
         //   }
         }
     }
+}
 }
