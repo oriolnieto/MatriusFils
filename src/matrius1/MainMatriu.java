@@ -36,35 +36,45 @@ public class MainMatriu {
         int[][] Matriu2 = new int[filesMatriu2][columnesMatriu2];
         int[][] Resultat = new int[filesMatriu1][columnesMatriu2];
 
-        for (int j = 0; j < filesMatriu1; j++) {
-            for (int i = 0; i < columnesMatriu1; i++){
+        for (int i = 0; i < filesMatriu1; i++) {
+            for (int j = 0; j < columnesMatriu1; j++){
                 System.out.println("Introdueix per a la Matriu 1 - Fila " + i + " Columna " + j + ":");
-                Matriu1[j][i] = scan.nextInt();
+                Matriu1[i][j] = scan.nextInt();
         }
 
         for (int z = 0; z < filesMatriu2; z++) {
-            for (int i = 0; i < columnesMatriu2; i++){
-                System.out.println("Introdueix per a la Matriu 2 - Fila " + i + " Columna " + j + ":");
-                Matriu2[z][i] = scan.nextInt();
+            for (int y = 0; y < columnesMatriu2; y++){
+                System.out.println("Introdueix per a la Matriu 2 - Fila " + z + " Columna " + y + ":");
+                Matriu2[z][y] = scan.nextInt();
                 }
         }
 
             FilMatriu[][] fils = new FilMatriu[filesMatriu1][columnesMatriu2];
 
-            for (int z = 0; z < filesMatriu1; z++) {
-                for (int i = 0; i < columnesMatriu2; i++){
-                    fils[i][z] = new FilMatriu(Matriu1,Matriu2,i,z,Resultat);
-                    fils[i][z].start();
+            for (int o = 0; o < filesMatriu1; o++) {
+                for (int u = 0; u < columnesMatriu2; u++){
+                    fils[o][u] = new FilMatriu(Matriu1,Matriu2,o,u,Resultat);
+                    fils[o][u].start();
                 }
+            }
 
-        //  for (int i = 0; i < fil; i++) {
-        //  try {
-        //       fils[i].join(); // s'ha de fer el join apart perque si n'ho es fa tot sincronitzat es a dir, es fa de forma secuencial,
-                // fins que no acabi el 1 no es fara el 2, en canvi si ho fem amb un bucle extern, inicia els 5 seguits
-        //   } catch (InterruptedException e) {
-        //       System.out.println("Error fent el Join!");
-        //   }
+                for (int y = 0; y < filesMatriu1; y++) {
+                    for (int p = 0; p < columnesMatriu2; p++){
+                        try {
+                            fils[y][p].join();
+                        }
+                        catch (InterruptedException e) {
+                            System.out.println("Error amb els joins.");
+                        }
+                    }
+                    }
+
+                for (int l = 0; l < filesMatriu1; l++) {
+                    for (int d = 0; d < columnesMatriu2; d++){
+                        System.out.print(Resultat[l][d] + " ");
+                    }
+                    System.out.println();
         }
     }
 }
-}
+    }
