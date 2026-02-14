@@ -38,13 +38,14 @@ public class MainMatriu {
 
         for (int i = 0; i < filesMatriu1; i++) {
             for (int j = 0; j < columnesMatriu1; j++){
-                System.out.println("Introdueix per a la Matriu 1 - Fila " + i + " Columna " + j + ":");
+                System.out.println("Introdueix per a la Matriu 1 - Fila " + (i+1) + " Columna " + (j+1) + ":");
                 Matriu1[i][j] = scan.nextInt();
+        }
         }
 
         for (int z = 0; z < filesMatriu2; z++) {
             for (int y = 0; y < columnesMatriu2; y++){
-                System.out.println("Introdueix per a la Matriu 2 - Fila " + z + " Columna " + y + ":");
+                System.out.println("Introdueix per a la Matriu 2 - Fila " + (z+1) + " Columna " + (y+1) + ":");
                 Matriu2[z][y] = scan.nextInt();
                 }
         }
@@ -77,4 +78,3 @@ public class MainMatriu {
         }
     }
 }
-    }
