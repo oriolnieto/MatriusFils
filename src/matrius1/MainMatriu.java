@@ -1,6 +1,6 @@
 package matrius1;
 
-// falta fer demanar opció, la que he fet ja que es demanant per consola i la que falta mitjançant arxiu, mirar mauri i irene practiques passades <3
+
 
 
 import java.io.File;
@@ -51,7 +51,7 @@ public class MainMatriu {
                 case 1:
                     for (int i = 0; i < filesMatriu1; i++) {
                         for (int j = 0; j < columnesMatriu1; j++) {
-                            System.out.println("Matriu 1[" + i + "][" + j + "]: ");
+                            System.out.println("Introdueix per a la Matriu 1 - Fila " + (i+1) + " Columna " + (j+1) + ":");
                             Matriu1[i][j] = scan.nextInt();
                         }
                     }
