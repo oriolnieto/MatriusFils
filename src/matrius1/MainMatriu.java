@@ -10,6 +10,9 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 import matrius1.FilMatriu;
 
+
+// programa de multiplicacio de matrius de nombres enters
+
 public class MainMatriu {
     public static void main (String[] args) {
 
